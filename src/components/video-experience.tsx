@@ -14,6 +14,7 @@ export function VideoExperience({ onComplete }: VideoExperienceProps) {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [showFinalMessage, setShowFinalMessage] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const MEGA_URL ="https://mega.nz/file/dnhy1AgQ#B33hC-KbMLSdM4mnk_FgHIdAcOBE7LzbRBFidR2kedg";
 
   const handleVideoReveal = () => {
     setShowVideo(true);
@@ -83,13 +84,16 @@ export function VideoExperience({ onComplete }: VideoExperienceProps) {
               <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-900/70 backdrop-blur-md border border-white/10 shadow-[0_10px_40px_-12px_rgba(0,0,0,0.45)]">
                 <video
                   ref={videoRef}
-                  className="h-full w-full object-contain bg-black"
-                  src="https://mega.nz/file/dnhy1AgQ#B33hC-KbMLSdM4mnk_FgHIdAcOBE7LzbRBFidR2kedg"
+                  className="h-full w-full object-contain bg-black cursor-pointer"
+                  src={MEGA_URL}
                   controls
                   playsInline
                   preload="metadata"
                   onLoadedData={handleVideoLoad}
                   onEnded={handleVideoEnded}
+                  onClick={() => {
+                    window.open(MEGA_URL, "_blank"); // 👈 si hace click, abre MEGA
+                  }}
                 />
                 {!videoLoaded && (
                   <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center">
@@ -103,6 +107,12 @@ export function VideoExperience({ onComplete }: VideoExperienceProps) {
 
               {/* Botón para abrir el popup del mensaje final */}
               <div className="mt-6 flex justify-center">
+                <Button
+                  onClick={() => window.open(MEGA_URL, "_blank")}
+                  className="mt-4 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-xl px-5 py-2"
+                >
+                  🔗 Ver en MEGA
+                </Button>
                 <Button
                   onClick={() => setShowFinalMessage(true)}
                   onMouseMove={(e) => {
