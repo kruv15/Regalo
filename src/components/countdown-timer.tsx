@@ -16,7 +16,7 @@ export function CountdownTimer({ onComplete }: { onComplete: () => void }) {
 
   useEffect(() => {
     // Birthday date: September 17, 2024 at midnight Bolivia time (UTC-4)
-    const targetDate = new Date("2025-09-14T00:00:00-04:00")
+    const targetDate = new Date("2025-09-17T23:55:00-04:00")
 
     const calculateTimeLeft = () => {
       const now = new Date()
