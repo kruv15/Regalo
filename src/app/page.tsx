@@ -14,7 +14,6 @@ type AppState = "countdown" | "constellation" | "letter" | "wishes" | "final-sur
 export default function HomePage() {
   const [appState, setAppState] = useState<AppState>("countdown")
   const [showLetter, setShowLetter] = useState(false)
-  const [hintStep, setHintStep] = useState(0)
   
   const handleCountdownComplete = () => {
     setAppState("constellation")

@@ -100,7 +100,6 @@ function getPalette(kind: "rose" | "sakura" | "cosmic"): Pal {
 function FlowerMedallion({
   size, pal, twinkle, reduceMotion,
 }: { size: number; pal: Pal; twinkle: boolean; reduceMotion: boolean }) {
-  const r = size / 2;
 
   return (
     <span
@@ -222,14 +221,4 @@ function Swash({
       ))}
     </svg>
   );
-}
-
-/* ---------------- Animaciones locales (inline keyframes) ---------------- */
-
-/* Nota: Tailwind no define estas; las usamos inline via className animate-[...] */
-
-declare global {
-  // evita error de TS por clases arbitrarias
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface CSSStyleDeclaration {}
 }

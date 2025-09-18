@@ -24,7 +24,6 @@ export function CosmicBackground({ overrideTime }: CosmicBackgroundProps) {
   const [isNight, setIsNight] = useState(false)
   const [cloudLayers, setCloudLayers] = useState<CloudLayer[]>([])
 
-  const [debugOpen, setDebugOpen] = useState(false)
   const [simHour, setSimHour] = useState<number | null>(null)
   const [simMinute, setSimMinute] = useState<number>(0)
 
