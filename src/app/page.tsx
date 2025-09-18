@@ -46,7 +46,7 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen relative">
-      <CosmicBackground overrideTime="22:30" />
+      <CosmicBackground overrideTime="23:48" />
 
       <div className="relative z-30">
         {appState === "countdown" && (
